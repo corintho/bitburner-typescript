@@ -2,7 +2,7 @@
 
 {
   # https://devenv.sh/packages/
-  packages = [ ];
+  packages = with pkgs; [ nodePackages.typescript-language-server ];
 
   # https://devenv.sh/languages/
   languages.javascript = {
