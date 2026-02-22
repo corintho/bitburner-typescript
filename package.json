@@ -2,12 +2,14 @@
   "name": "bitburner-typescript-template",
   "version": "2.0.0",
   "scripts": {
-    "watch:transpile": "tsc -w --preserveWatchOutput",
+    "transpile": "babel src --extensions \".ts,.tsx,.js,.jsx\" --out-dir dist --copy-files",
+    "watch:transpile": "babel src --extensions \".ts,.tsx,.js,.jsx\" --out-dir dist --copy-files --watch",
     "watch:local": "node build/watch.js",
     "watch:remote": "bitburner-filesync",
     "watch:init": "node build/init.js",
-    "watch:all": "concurrently npm:watch:transpile npm:watch:local npm:watch:remote",
-    "watch": "npm run watch:init && npm run watch:all"
+    "watch:all": "concurrently \"npm:watch:transpile\" \"npm:watch:local\" \"npm:watch:remote\"",
+    "typecheck": "tsc --noEmit",
+    "watch": "npm run watch:init && npm run typecheck && npm run watch:all"
   },
   "author": "hydroflame, Hoekstraa, based on work by SlyCedix",
   "devDependencies": {
@@ -21,6 +23,11 @@
     "eslint": "^8.22.0",
     "fast-glob": "^3.2.12",
     "sync-directory": "^5.1.7",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "@babel/cli": "^7.22.0",
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "@babel/preset-react": "^7.22.0",
+    "@babel/preset-typescript": "^7.22.0"
   }
 }
