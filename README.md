@@ -1,3 +1,7 @@
+# Changes from the default template
+The scripts in this repo expect to interact with the scripts from: https://github.com/r3c0n75/bitburner-scripts
+For now, the easiest way it to go there and run its quick install instructions to have it running directly from bitburner.
+
 # Typescript template for Bitburner's Remote File API
 
 The official template for synchronizing Typescript/Javascript from your computer to the game.
